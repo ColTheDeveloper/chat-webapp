@@ -33,7 +33,7 @@ const Login=()=>{
                     "Content-type":"application/json"
                 }
             }
-            const {data}=await axios.post("api/login",{email,password},config)
+            const {data}=await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/login`,{email,password},config)
             setUser(data)
             toast({
                 title:"Login Successful",

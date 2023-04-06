@@ -96,7 +96,7 @@ const SignUp=()=>{
                 }
             }
             
-            const {data}=await axios.post("/api/register", {name,email,password,pic},config);
+            const {data}=await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/register`, {name,email,password,pic},config);
             setUser(data)
             toast({
                 title:"Registration Successful",

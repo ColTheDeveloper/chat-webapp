@@ -3,6 +3,7 @@ const express=require("express")
 const dotenv=require("dotenv")
 const mongoose=require("mongoose")
 const bodyParser=require("body-parser")
+const cors=require("cors")
 
 
 const userRoutes= require( "./routes/userRoutes.js")
@@ -16,6 +17,10 @@ dotenv.config()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
+app.use(cors({
+    origin:["https://col-chatwebapp.netlify.app/","http://localhost:3000"],
+    methods: ['GET','POST','PUT']
+}))
 
 const PORT=process.env.PORT
 const CONNECTION=process.env.CONNECTION
@@ -29,6 +34,8 @@ mongoose
 const server=app.listen(PORT,()=>{
     console.log(`server started on port ${PORT}`)
 });
+
+
 
 const io=require("socket.io")(server,{
     cors:{

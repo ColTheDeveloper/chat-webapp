@@ -21,7 +21,8 @@ const MyChats=({fetchAgain})=>{
 
                 }
             }
-            const {data}=await axios.get("/api/chat", config)
+            const {data}=await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/chat`, config)
+            
             setChats(data)
         } catch (error) {
             toast({
@@ -86,8 +87,11 @@ const MyChats=({fetchAgain})=>{
             >
                 {chats?
                     <Stack overflowY='scroll'>
-                        {chats.map((chat)=>(
-                            <Box
+
+                        {chats.map((chat)=>{
+                            
+                            return(
+                                <Box
                                 onClick={()=>setSelectedChat(chat)}
                                 cursor="pointer"
                                 bg={selectedChat===chat?"#38b2ac": "#e8e8e8"}
@@ -102,7 +106,9 @@ const MyChats=({fetchAgain})=>{
                             </Text>
 
                             </Box>
-                        ))}
+                            )
+                            
+                        })}
                     </Stack>
 
                 :<ChatLoading />}
