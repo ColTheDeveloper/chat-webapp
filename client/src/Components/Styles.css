@@ -1,0 +1,18 @@
+.messages{
+    display: flex;
+    flex-direction: column;
+    overflow-y:scroll ;
+    scrollbar-width: none;
+}
+.notification{
+    position: absolute;
+    color:white;
+    background-color: red;
+    font-size: 8px;
+    font-weight: 900;
+    right:107px ;
+    top:13px ;
+
+    padding: 2px 4px ;
+    border-radius: 50%;
+}
