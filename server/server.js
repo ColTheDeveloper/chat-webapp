@@ -18,7 +18,7 @@ dotenv.config()
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(cors({
-    origin:["https://col-chatwebapp.netlify.app/","http://localhost:3000"],
+    origin:["https://col-chatwebapp.netlify.app/","http://localhost:3000","https://chat-webapp-seven.vercel.app"],
     methods: ['GET','POST','PUT']
 }))
 
