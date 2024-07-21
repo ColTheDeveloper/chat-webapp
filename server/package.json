@@ -2,9 +2,10 @@
   "name": "chat-webapp-backend",
   "version": "1.0.0",
   "description": "A web app for messaging others",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "dev": "nodemon index.js",
+    "start":"node index.js"
   },
   "author": "Col The Developer",
   "license": "ISC",
